@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="nconin_PropertyUATModel.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 5.6.38" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblcall">
+          <Key>
+            <PropertyRef Name="idcall" />
+          </Key>
+          <Property Name="idcall" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcaller" Type="int" />
+          <Property Name="dtinquirycall" Type="datetime" Precision="0" />
+          <Property Name="idstaff" Type="int" />
+          <Property Name="txtinquiryproject" Type="varchar" MaxLength="50" />
+          <Property Name="txtrequirementtype" Type="varchar" MaxLength="50" />
+          <Property Name="txtareareqmin" Type="int" />
+          <Property Name="txtareareqmax" Type="int" />
+          <Property Name="txtstatus" Type="varchar" MaxLength="7" />
+          <Property Name="txtbudgetmin" Type="varchar" MaxLength="12" />
+          <Property Name="txtbudgetmx" Type="varchar" MaxLength="12" />
+          <Property Name="txtpropertyoffered" Type="varchar" MaxLength="50" />
+          <Property Name="txtratequoted" Type="varchar" MaxLength="20" />
+          <Property Name="txttermasked" Type="varchar" MaxLength="25" />
+          <Property Name="txttermoffered" Type="varchar" MaxLength="25" />
+          <Property Name="txtinquirymedium" Type="varchar" MaxLength="25" />
+          <Property Name="FollowUp Date" Type="datetime" Precision="0" />
+          <Property Name="txtmeetingnotes" Type="varchar" MaxLength="120" />
+          <Property Name="txtarrangedate" Type="datetime" Precision="0" />
+          <Property Name="txtpurpose" Type="varchar" MaxLength="25" />
+          <Property Name="IsActive" Type="boolean" />
+          <Property Name="CreatedDate" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+          <Property Name="ModifyedDate" Type="datetime" Precision="0" />
+          <Property Name="ModifyedBy" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblcaller">
+          <Key>
+            <PropertyRef Name="idcaller" />
+          </Key>
+          <Property Name="idcaller" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="CallerType" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="12" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="Company" Type="varchar" MaxLength="75" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="15" />
+          <Property Name="BusinessPhone" Type="varchar" MaxLength="12" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="12" />
+          <Property Name="FaxNumber" Type="varchar" MaxLength="12" />
+          <Property Name="Address" Type="varchar" MaxLength="75" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="15" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+          <Property Name="CountryRegion" Type="varchar" MaxLength="15" />
+          <Property Name="WebPage" Type="varchar" MaxLength="50" />
+          <Property Name="attachmentphoto" Type="mediumtext" />
+          <Property Name="attachmentdoc" Type="mediumtext" />
+          <Property Name="pancardnos" Type="varchar" MaxLength="10" />
+          <Property Name="bankaccount" Type="varchar" MaxLength="15" />
+          <Property Name="IsActive" Type="boolean" />
+          <Property Name="CreatedDate" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+          <Property Name="ModifyedDate" Type="datetime" Precision="0" />
+          <Property Name="ModifyedBy" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblprakrutiproperty">
+          <Key>
+            <PropertyRef Name="idprakrutiproperty" />
+          </Key>
+          <Property Name="idprakrutiproperty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="txtlocation" Type="varchar" MaxLength="255" />
+          <Property Name="txtNamingCon" Type="varchar" MaxLength="255" />
+          <Property Name="txttype" Type="varchar" MaxLength="15" />
+          <Property Name="txtfloor" Type="varchar" MaxLength="255" />
+          <Property Name="blnstatus" Type="sbyte" />
+          <Property Name="sngcarpetarea" Type="double" />
+          <Property Name="IsActive" Type="boolean" />
+          <Property Name="CreatedDate" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+          <Property Name="ModifyedDate" Type="datetime" Precision="0" />
+          <Property Name="ModifyedBy" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblstaff">
+          <Key>
+            <PropertyRef Name="idstaff" />
+          </Key>
+          <Property Name="idstaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="staffname" Type="varchar" MaxLength="150" />
+          <Property Name="staffmobile" Type="varchar" MaxLength="12" />
+          <Property Name="staffemail" Type="varchar" MaxLength="150" />
+          <Property Name="IsActive" Type="boolean" />
+          <Property Name="CreatedDate" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+          <Property Name="ModifyedDate" Type="datetime" Precision="0" />
+          <Property Name="ModifyedBy" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="nconin_PropertyUATModelStoreContainer">
+          <EntitySet Name="tblcall" EntityType="Self.tblcall" Schema="nconin_PropertyUAT" store:Type="Tables" />
+          <EntitySet Name="tblcaller" EntityType="Self.tblcaller" Schema="nconin_PropertyUAT" store:Type="Tables" />
+          <EntitySet Name="tblprakrutiproperty" EntityType="Self.tblprakrutiproperty" Schema="nconin_PropertyUAT" store:Type="Tables" />
+          <EntitySet Name="tblstaff" EntityType="Self.tblstaff" Schema="nconin_PropertyUAT" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="nconin_PropertyUATModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblcall">
+          <Key>
+            <PropertyRef Name="idcall" />
+          </Key>
+          <Property Name="idcall" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcaller" Type="Int32" />
+          <Property Name="dtinquirycall" Type="DateTime" />
+          <Property Name="idstaff" Type="Int32" />
+          <Property Name="txtinquiryproject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="txtrequirementtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="txtareareqmin" Type="Int32" />
+          <Property Name="txtareareqmax" Type="Int32" />
+          <Property Name="txtstatus" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="txtbudgetmin" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="txtbudgetmx" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="txtpropertyoffered" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="txtratequoted" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="txttermasked" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="txttermoffered" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="txtinquirymedium" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FollowUp_Date" Type="DateTime" />
+          <Property Name="txtmeetingnotes" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="txtarrangedate" Type="DateTime" />
+          <Property Name="txtpurpose" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyedDate" Type="DateTime" />
+          <Property Name="ModifyedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblcaller">
+          <Key>
+            <PropertyRef Name="idcaller" />
+          </Key>
+          <Property Name="idcaller" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CallerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CountryRegion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WebPage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="attachmentphoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="attachmentdoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pancardnos" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="bankaccount" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyedDate" Type="DateTime" />
+          <Property Name="ModifyedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblprakrutiproperty">
+          <Key>
+            <PropertyRef Name="idprakrutiproperty" />
+          </Key>
+          <Property Name="idprakrutiproperty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="txtlocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNamingCon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txttype" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="txtfloor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="blnstatus" Type="SByte" />
+          <Property Name="sngcarpetarea" Type="Double" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyedDate" Type="DateTime" />
+          <Property Name="ModifyedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblstaff">
+          <Key>
+            <PropertyRef Name="idstaff" />
+          </Key>
+          <Property Name="idstaff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="staffname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="staffmobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="staffemail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyedDate" Type="DateTime" />
+          <Property Name="ModifyedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="nconin_PropertyUATEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblcalls" EntityType="Self.tblcall" />
+          <EntitySet Name="tblcallers" EntityType="Self.tblcaller" />
+          <EntitySet Name="tblprakrutiproperties" EntityType="Self.tblprakrutiproperty" />
+          <EntitySet Name="tblstaffs" EntityType="Self.tblstaff" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="nconin_PropertyUATModelStoreContainer" CdmEntityContainer="nconin_PropertyUATEntities">
+          <EntitySetMapping Name="tblcalls">
+            <EntityTypeMapping TypeName="nconin_PropertyUATModel.tblcall">
+              <MappingFragment StoreEntitySet="tblcall">
+                <ScalarProperty Name="idcall" ColumnName="idcall" />
+                <ScalarProperty Name="idcaller" ColumnName="idcaller" />
+                <ScalarProperty Name="dtinquirycall" ColumnName="dtinquirycall" />
+                <ScalarProperty Name="idstaff" ColumnName="idstaff" />
+                <ScalarProperty Name="txtinquiryproject" ColumnName="txtinquiryproject" />
+                <ScalarProperty Name="txtrequirementtype" ColumnName="txtrequirementtype" />
+                <ScalarProperty Name="txtareareqmin" ColumnName="txtareareqmin" />
+                <ScalarProperty Name="txtareareqmax" ColumnName="txtareareqmax" />
+                <ScalarProperty Name="txtstatus" ColumnName="txtstatus" />
+                <ScalarProperty Name="txtbudgetmin" ColumnName="txtbudgetmin" />
+                <ScalarProperty Name="txtbudgetmx" ColumnName="txtbudgetmx" />
+                <ScalarProperty Name="txtpropertyoffered" ColumnName="txtpropertyoffered" />
+                <ScalarProperty Name="txtratequoted" ColumnName="txtratequoted" />
+                <ScalarProperty Name="txttermasked" ColumnName="txttermasked" />
+                <ScalarProperty Name="txttermoffered" ColumnName="txttermoffered" />
+                <ScalarProperty Name="txtinquirymedium" ColumnName="txtinquirymedium" />
+                <ScalarProperty Name="FollowUp_Date" ColumnName="FollowUp Date" />
+                <ScalarProperty Name="txtmeetingnotes" ColumnName="txtmeetingnotes" />
+                <ScalarProperty Name="txtarrangedate" ColumnName="txtarrangedate" />
+                <ScalarProperty Name="txtpurpose" ColumnName="txtpurpose" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifyedDate" ColumnName="ModifyedDate" />
+                <ScalarProperty Name="ModifyedBy" ColumnName="ModifyedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblcallers">
+            <EntityTypeMapping TypeName="nconin_PropertyUATModel.tblcaller">
+              <MappingFragment StoreEntitySet="tblcaller">
+                <ScalarProperty Name="idcaller" ColumnName="idcaller" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="CallerType" ColumnName="CallerType" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="CountryRegion" ColumnName="CountryRegion" />
+                <ScalarProperty Name="WebPage" ColumnName="WebPage" />
+                <ScalarProperty Name="attachmentphoto" ColumnName="attachmentphoto" />
+                <ScalarProperty Name="attachmentdoc" ColumnName="attachmentdoc" />
+                <ScalarProperty Name="pancardnos" ColumnName="pancardnos" />
+                <ScalarProperty Name="bankaccount" ColumnName="bankaccount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifyedDate" ColumnName="ModifyedDate" />
+                <ScalarProperty Name="ModifyedBy" ColumnName="ModifyedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblprakrutiproperties">
+            <EntityTypeMapping TypeName="nconin_PropertyUATModel.tblprakrutiproperty">
+              <MappingFragment StoreEntitySet="tblprakrutiproperty">
+                <ScalarProperty Name="idprakrutiproperty" ColumnName="idprakrutiproperty" />
+                <ScalarProperty Name="txtlocation" ColumnName="txtlocation" />
+                <ScalarProperty Name="txtNamingCon" ColumnName="txtNamingCon" />
+                <ScalarProperty Name="txttype" ColumnName="txttype" />
+                <ScalarProperty Name="txtfloor" ColumnName="txtfloor" />
+                <ScalarProperty Name="blnstatus" ColumnName="blnstatus" />
+                <ScalarProperty Name="sngcarpetarea" ColumnName="sngcarpetarea" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifyedDate" ColumnName="ModifyedDate" />
+                <ScalarProperty Name="ModifyedBy" ColumnName="ModifyedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblstaffs">
+            <EntityTypeMapping TypeName="nconin_PropertyUATModel.tblstaff">
+              <MappingFragment StoreEntitySet="tblstaff">
+                <ScalarProperty Name="idstaff" ColumnName="idstaff" />
+                <ScalarProperty Name="staffname" ColumnName="staffname" />
+                <ScalarProperty Name="staffmobile" ColumnName="staffmobile" />
+                <ScalarProperty Name="staffemail" ColumnName="staffemail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifyedDate" ColumnName="ModifyedDate" />
+                <ScalarProperty Name="ModifyedBy" ColumnName="ModifyedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

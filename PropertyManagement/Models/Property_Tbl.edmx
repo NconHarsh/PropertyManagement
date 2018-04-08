@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="nconin_ncondatabase016Model.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 5.6.38" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblcall' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblcall">
+          <Property Name="idcall" Type="int" />
+          <Property Name="idcaller" Type="int" />
+          <Property Name="dtinquirycall" Type="datetime" Precision="0" />
+          <Property Name="idstaff" Type="int" />
+          <Property Name="txtinquiryproject" Type="varchar" MaxLength="50" />
+          <Property Name="txtrequirementtype" Type="varchar" MaxLength="50" />
+          <Property Name="txtareareqmin" Type="int" />
+          <Property Name="txtareareqmax" Type="int" />
+          <Property Name="txtstatus" Type="varchar" MaxLength="7" />
+          <Property Name="txtbudgetmin" Type="varchar" MaxLength="12" />
+          <Property Name="txtbudgetmx" Type="varchar" MaxLength="12" />
+          <Property Name="txtpropertyoffered" Type="varchar" MaxLength="50" />
+          <Property Name="txtratequoted" Type="varchar" MaxLength="20" />
+          <Property Name="txttermasked" Type="varchar" MaxLength="25" />
+          <Property Name="txttermoffered" Type="varchar" MaxLength="25" />
+          <Property Name="txtinquirymedium" Type="varchar" MaxLength="25" />
+          <Property Name="FollowUp Date" Type="datetime" Precision="0" />
+          <Property Name="txtmeetingnotes" Type="varchar" MaxLength="120" />
+          <Property Name="txtarrangedate" Type="datetime" Precision="0" />
+          <Property Name="txtpurpose" Type="varchar" MaxLength="25" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblcaller' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblcaller">
+          <Property Name="idcaller" Type="int" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="CallerType" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="12" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="Company" Type="varchar" MaxLength="75" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="15" />
+          <Property Name="BusinessPhone" Type="varchar" MaxLength="12" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="12" />
+          <Property Name="FaxNumber" Type="varchar" MaxLength="12" />
+          <Property Name="Address" Type="varchar" MaxLength="75" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="15" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+          <Property Name="CountryRegion" Type="varchar" MaxLength="15" />
+          <Property Name="WebPage" Type="varchar" MaxLength="50" />
+          <Property Name="attachmentphoto" Type="mediumtext" />
+          <Property Name="attachmentdoc" Type="mediumtext" />
+          <Property Name="pancardnos" Type="varchar" MaxLength="10" />
+          <Property Name="bankaccount" Type="varchar" MaxLength="15" />
+        </EntityType>-->
+        <EntityType Name="tblmember">
+          <Key>
+            <PropertyRef Name="member_id" />
+          </Key>
+          <Property Name="member_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="member_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="dob" Type="date" Nullable="false" />
+          <Property Name="user_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="contact" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="property_id" Type="int" Nullable="false" />
+          <Property Name="email_id" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="isActive" Type="sbyte" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblowner' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblowner">
+          <Property Name="idownertype" Type="int" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="Ownertype" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="12" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="Company" Type="varchar" MaxLength="75" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="25" />
+          <Property Name="BusinessPhone" Type="varchar" MaxLength="12" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="12" />
+          <Property Name="FaxNumber" Type="varchar" MaxLength="12" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="15" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="12" />
+          <Property Name="Country" Type="varchar" MaxLength="15" />
+          <Property Name="WebPage" Type="varchar" MaxLength="50" />
+          <Property Name="attachmentphoto" Type="mediumtext" />
+          <Property Name="attachmentdoc" Type="mediumtext" />
+          <Property Name="pancardnos" Type="varchar" MaxLength="10" />
+          <Property Name="bankaccount" Type="varchar" MaxLength="15" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblownerdetail' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblownerdetail">
+          <Property Name="idmember" Type="int" />
+          <Property Name="idproperty" Type="int" />
+          <Property Name="idaccount" Type="int" />
+          <Property Name="txtmembertype" Type="varchar" MaxLength="25" />
+          <Property Name="oname" Type="varchar" MaxLength="50" />
+          <Property Name="olastname" Type="varchar" MaxLength="50" />
+          <Property Name="opancardnos" Type="varchar" MaxLength="50" />
+          <Property Name="opancardpic" Type="mediumtext" />
+          <Property Name="obirthday" Type="datetime" Precision="0" />
+          <Property Name="oaddress1" Type="varchar" MaxLength="75" />
+          <Property Name="oaddress2" Type="varchar" MaxLength="75" />
+          <Property Name="ocity" Type="varchar" MaxLength="50" />
+          <Property Name="ocountry" Type="varchar" MaxLength="50" />
+          <Property Name="ophoto" Type="varchar" MaxLength="50" />
+          <Property Name="omobile" Type="varchar" MaxLength="50" />
+          <Property Name="ohometel" Type="varchar" MaxLength="50" />
+          <Property Name="oofficetel" Type="varchar" MaxLength="12" />
+          <Property Name="oemail" Type="varchar" MaxLength="12" />
+          <Property Name="ostatus" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblprakrutiproperty' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblprakrutiproperty">
+          <Property Name="idprakrutiproperty" Type="int" />
+          <Property Name="txtlocation" Type="varchar" MaxLength="255" />
+          <Property Name="txtNamingCon" Type="varchar" MaxLength="255" />
+          <Property Name="txttype" Type="varchar" MaxLength="15" />
+          <Property Name="txtfloor" Type="varchar" MaxLength="255" />
+          <Property Name="blnstatus" Type="sbyte" />
+          <Property Name="sngcarpetarea" Type="double" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblstaff' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblstaff">
+          <Property Name="idstaff" Type="int" />
+          <Property Name="staffname" Type="varchar" MaxLength="50" />
+          <Property Name="staffmobile" Type="varchar" MaxLength="12" />
+          <Property Name="staffemail" Type="varchar" MaxLength="35" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tbltransact' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbltransact">
+          <Property Name="idtransact" Type="int" />
+          <Property Name="idaccount" Type="int" />
+          <Property Name="idproperty" Type="int" />
+          <Property Name="dtdate" Type="varchar" MaxLength="255" />
+          <Property Name="tbank" Type="varchar" MaxLength="255" />
+          <Property Name="tbankbranch" Type="varchar" MaxLength="255" />
+          <Property Name="tchqnos" Type="varchar" MaxLength="255" />
+          <Property Name="tonlineref" Type="varchar" MaxLength="255" />
+          <Property Name="sngreceivable" Type="int" />
+          <Property Name="sngpaid" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Catalog1.nconin_ncondatabase016.tblunit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblunit">
+          <Property Name="idunit" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <EntityType Name="tbluser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="firstname" Type="varchar" MaxLength="65" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="65" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="mobile" Type="varchar" MaxLength="10" />
+          <Property Name="homephone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="pancard" Type="varchar" MaxLength="20" />
+          <Property Name="adharcard" Type="varchar" MaxLength="25" />
+          <Property Name="address" Type="varchar" MaxLength="250" />
+          <Property Name="city" Type="varchar" MaxLength="100" />
+          <Property Name="state" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="status" Type="sbyte" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="isActive" Type="sbyte" Nullable="false" />
+          <Property Name="joining_date" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="nconin_ncondatabase016ModelStoreContainer">
+          <EntitySet Name="tblmember" EntityType="Self.tblmember" Schema="nconin_ncondatabase016" store:Type="Tables" />
+          <EntitySet Name="tbluser" EntityType="Self.tbluser" Schema="nconin_ncondatabase016" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="nconin_ncondatabase016Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblmember">
+          <Key>
+            <PropertyRef Name="member_id" />
+          </Key>
+          <Property Name="member_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="member_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="false" />
+          <Property Name="user_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contact" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="property_id" Type="Int32" Nullable="false" />
+          <Property Name="email_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isActive" Type="SByte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbluser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstname" Type="String" MaxLength="65" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="homephone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pancard" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="adharcard" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="SByte" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isActive" Type="SByte" Nullable="false" />
+          <Property Name="joining_date" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="PropertyEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblmembers" EntityType="Self.tblmember" />
+          <EntitySet Name="tblusers" EntityType="Self.tbluser" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="nconin_ncondatabase016ModelStoreContainer" CdmEntityContainer="PropertyEntity">
+          <EntitySetMapping Name="tblmembers">
+            <EntityTypeMapping TypeName="nconin_ncondatabase016Model.tblmember">
+              <MappingFragment StoreEntitySet="tblmember">
+                <ScalarProperty Name="member_id" ColumnName="member_id" />
+                <ScalarProperty Name="member_name" ColumnName="member_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="property_id" ColumnName="property_id" />
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblusers">
+            <EntityTypeMapping TypeName="nconin_ncondatabase016Model.tbluser">
+              <MappingFragment StoreEntitySet="tbluser">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="homephone" ColumnName="homephone" />
+                <ScalarProperty Name="pancard" ColumnName="pancard" />
+                <ScalarProperty Name="adharcard" ColumnName="adharcard" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="joining_date" ColumnName="joining_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
